@@ -6,6 +6,10 @@ from reportlab.lib.pagesizes import landscape, A4
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor
 
+# ✅ Base path fix (VERY IMPORTANT)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CERT_DIR = os.path.join(BASE_DIR, "assets", "certificates")
+
 
 def safe_text(text):
     return "".join(c for c in text if c.isalnum() or c in (" ", "_")).strip()
@@ -21,15 +25,14 @@ def build_certificate_number(donation_id, donation_date):
 
 def generate_certificate(donation_id, donor_name, donation_date, hospital_name, remarks=""):
     try:
-        # ✅ SAFE FOLDER CREATION
-        os.makedirs("certificates", exist_ok=True)
+        # ✅ Create correct folder
+        os.makedirs(CERT_DIR, exist_ok=True)
 
         safe_name = safe_text(donor_name).replace(" ", "_")
         safe_date = donation_date.replace("-", "_")
 
-        # ✅ UNIQUE FILE NAME
         file_path = os.path.join(
-            "certificates",
+            CERT_DIR,
             f"certificate_{safe_name}_{safe_date}_{donation_id}.pdf"
         )
 
@@ -141,7 +144,7 @@ def open_existing_certificate(donor_name, donation_date, donation_id):
     safe_date = donation_date.replace("-", "_")
 
     file_path = os.path.join(
-        "certificates",
+        CERT_DIR,
         f"certificate_{safe_name}_{safe_date}_{donation_id}.pdf"
     )
 
