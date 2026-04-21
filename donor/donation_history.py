@@ -3,10 +3,10 @@ from tkinter import ttk, messagebox
 from datetime import datetime
 import time  # ✅ ADDED
 
-from database import get_connection
-from theme import BG_COLOR, CARD_COLOR, TEXT_COLOR, MUTED_TEXT
-from utils import is_eligible_to_donate, days_since_last_donation
-from certificate_utils import generate_certificate, open_existing_certificate
+from core.database import get_connection
+from core.theme import BG_COLOR, CARD_COLOR, TEXT_COLOR, MUTED_TEXT
+from core.utils import is_eligible_to_donate, days_since_last_donation
+from services.certificate_utils import generate_certificate, open_existing_certificate
 
 
 def show_donation_history(parent):
