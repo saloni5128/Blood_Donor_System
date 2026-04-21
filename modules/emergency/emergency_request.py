@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from datetime import datetime
-from database import get_connection
-from theme import BG_COLOR, CARD_COLOR, TEXT_COLOR, MUTED_TEXT
-from utils import request_priority
+from core.database import get_connection
+from core.theme import BG_COLOR, CARD_COLOR, TEXT_COLOR, MUTED_TEXT
+from core.utils import request_priority
 
 
 def show_emergency_request(parent):
