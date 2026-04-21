@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-from database import get_connection
-from theme import BG_COLOR, CARD_COLOR, SECONDARY_COLOR, TEXT_COLOR, MUTED_TEXT
+from core.database import get_connection
+from core.theme import BG_COLOR, CARD_COLOR, SECONDARY_COLOR, TEXT_COLOR, MUTED_TEXT
 
 
 def create_stat_card(parent, title, value, row, col):
