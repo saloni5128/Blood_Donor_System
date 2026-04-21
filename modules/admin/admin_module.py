@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-from database import get_connection
-from theme import BG_COLOR, CARD_COLOR, TEXT_COLOR
-from utils import days_since_last_donation, is_eligible_to_donate, rare_blood_text
+from core.database import get_connection
+from core.theme import BG_COLOR, CARD_COLOR, TEXT_COLOR
+from core.utils import days_since_last_donation, is_eligible_to_donate, rare_blood_text
 
 
 def show_admin_module(parent):
